@@ -1,0 +1,49 @@
+<form #updateauthor="ngForm" (ngSubmit) = "updateAuthor()">
+    <div class="container addbook" style="background-color: rgba(0, 0, 0, 0.884);">
+      <h3 class="addbook-heading">Add New Author</h3>
+      <div class="row addbook-form">
+        <div class="col-md-2">
+          <label>Name</label>
+        </div>
+        <div class="col-md-10">
+          <div class="form-group">
+            <input type="text" name="name" [(ngModel)]= "authorItem.name" id="title" class="form-control"  placeholder="Name of the author*"  style=" color: blanchedalmond;"required>
+            <span id="error1" style="color: red;font-size: 13px;"></span>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <label>Type</label>
+        </div>
+        <div class="col-md-10">
+          <div class="form-group">
+            <input type="text" name="description" [(ngModel)]= "authorItem.description"  id="name" class="form-control" placeholder="Description of Author* (eg: American author)"  style=" color: blanchedalmond;" required>
+            <span id="error2" style="color: red;font-size: 13px;"></span>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <label>Genres</label>
+        </div>
+        <div class="col-md-10">
+            <div class="form-group">
+                <input type="text" name="genre" [(ngModel)]= "authorItem.genre"  class="form-control" placeholder="Enter the genres of the book*"  style=" color: blanchedalmond;" required>
+                <span id="error3" style="color: red;font-size: 13px;"></span>
+            </div>
+        </div>
+               
+        <div class="col-md-2">
+          <label>Details</label>
+        </div>
+        <div class="col-md-10">
+           <textarea class="form-control z-depth-1"  name="about" [(ngModel)]= "authorItem.about" style=" color: blanchedalmond;" id="exampleFormControlTextarea6" rows="3" placeholder="About the author*" required></textarea>
+        </div>
+        
+        <!-- <label>Choose an image of author </label> <br>
+        <textarea class="form-control z-depth-1"  name="image" [(ngModel)]= "authorItem.image" style=" color: blanchedalmond;" id="exampleFormControlTextarea6" rows="2" placeholder="Copy and paste the image address here*" required></textarea> -->
+          
+          <!-- <img id="preview" src="/images/bookplaceholder.jpg" onclick="show()" style="cursor: pointer;"> -->
+         
+          <input type="submit" [disabled]="updateauthor.invalid" class="btnnewbook" value="Save">
+        </div>   
+   
+    </div>
+  </form>
